@@ -55,6 +55,6 @@ services:
 
 networks: 
   kafka-broker-network:
-    external: false
+    external: true
     name:  kafka-broker-network
     driver: bridge 
