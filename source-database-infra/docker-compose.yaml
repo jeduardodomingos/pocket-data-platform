@@ -1,0 +1,20 @@
+version: '3'
+services:
+  sales-db:
+    image: mysql
+    platform: linux/x86_64
+    networks: 
+      - kafka-broker-network
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234MySql
+      MYSQL_DATABASE: db_sales
+      MYSQL_USER: debezium
+      MYSQL_PASSWORD: debezium1234
+    ports:
+      - 3306:3306
+
+networks: 
+  kafka-broker-network:
+    external: true
+    name:  kafka-broker-network
+    driver: bridge 
