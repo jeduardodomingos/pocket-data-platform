@@ -6,8 +6,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 1234MySql
       MYSQL_DATABASE: db_sales
-      MYSQL_USER: debezium
-      MYSQL_PASSWORD: debezium1234
     ports:
       - 3306:3306
 

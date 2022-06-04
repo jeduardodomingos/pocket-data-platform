@@ -59,7 +59,7 @@ services:
       BOOTSTRAP_SERVERS: kafka-server:29092
 
   kafka-connect-ui:
-    image: debezium/debezium-ui
+    image: debezium/debezium-ui:1.9.3.Final
     platform: linux/x86_64
     depends_on:
       - kaka-connect-server
@@ -67,6 +67,7 @@ services:
       - 8085:8080
     environment:
       KAFKA_CONNECT_URIS: http://kaka-connect-server:8083
+      DEPLOYMENT_MODE: validation_disabled
 
   ####################################################################################################################################################
 
